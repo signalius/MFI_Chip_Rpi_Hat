@@ -7,6 +7,9 @@ This Raspberry Pi HAT allows you to work with MFI chips with the symbols MFI343S
 
 ![schematic](https://raw.githubusercontent.com/signalius/MFI_Chip_Rpi_Hat/master/Output/Schematic.png)
 
+![pcb](https://raw.githubusercontent.com/signalius/MFI_Chip_Rpi_Hat/master/Output/pcb.png)
+
+
 ## LICENSE
 GNU General Public License v3.0
 
