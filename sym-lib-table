@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "MFI")(type "KiCad")(uri "${KIPRJMOD}/libs/MFI.kicad_sym")(options "")(descr ""))
+  (lib (name "rpi_gpio")(type "KiCad")(uri "${KIPRJMOD}/libs/rpi_gpio.kicad_sym")(options "")(descr ""))
+)
