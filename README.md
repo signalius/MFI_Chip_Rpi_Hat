@@ -11,12 +11,17 @@ This Raspberry Pi HAT allows you to work with MFI chips with the symbols MFI343S
 
 ## Sample cert
 
-Decode binary file with cert
+Convert string hex to binary file
+```bash
+echo "3082025b06092a86...." | xxd -r -p > cert.bin
+```
+
+Decode it
 ```bash
 openssl pkcs7 -inform DER -in cert.bin -print_certs -text -noout
 ```
 
-Decoded cert
+Result
 ```bash
 Certificate:
     Data:
