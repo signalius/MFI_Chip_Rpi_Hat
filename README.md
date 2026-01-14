@@ -3,7 +3,7 @@
 This Raspberry Pi HAT allows you to work with MFI chips with the symbols MFI343S00177 (CP3.0) and MFI337S3959 (CP2.0C). 
 Additionally, it has a USB C power in connector because USB C from Raspberry Pi may be needed as a USB OTG port.
 
-* Tested on: Raspberry 5 and Zero 2
+* Tested on: Raspberry 5 and Zero 2W
 * Interface: I2C
 
 ## Sample cert
