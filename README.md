@@ -5,9 +5,9 @@ This Raspberry Pi HAT allows you to work with MFI chips with the symbols MFI343S
 * Compatible: Raspberry 4 and 5
 * Interface: I2C
 
-![schematic](https://raw.githubusercontent.com/signalius/MFI_Chip_Rpi_Hat/master/Output/Schematic.png)
+![schematic](https://raw.githubusercontent.com/signalius/MFI_Chip_Rpi_Hat/master/electronic/Output/Schematic.png)
 
-![pcb](https://raw.githubusercontent.com/signalius/MFI_Chip_Rpi_Hat/master/Output/pcb.png)
+![pcb](https://raw.githubusercontent.com/signalius/MFI_Chip_Rpi_Hat/master/electronic/Output/pcb.png)
 
 
 ## LICENSE

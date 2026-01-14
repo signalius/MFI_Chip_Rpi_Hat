@@ -1,0 +1,32 @@
+openssl pkcs7 -inform DER -in mirror_cert.bin -print_certs -text
+
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            44:14:a0:b3:09:f0:73:1a:f7:ce:40:25:37:f7:96:23
+        Signature Algorithm: ecdsa-with-SHA256
+        Issuer: C=US, O=Apple Inc., OU=Apple Certification Authority, CN=Apple Accessories Certification Authority - 00000002
+        Validity
+            Not Before: Apr 28 17:29:44 2025 GMT
+            Not After : Dec 31 23:59:59 2049 GMT
+        Subject: C=US, O=Apple Inc., OU=Apple Accessories, CN=IPA_4414A0B309F0731AF7CE402537F79623
+        Subject Public Key Info:
+            Public Key Algorithm: id-ecPublicKey
+                Public-Key: (256 bit)
+                pub:
+                    04:61:76:03:a9:dc:88:07:ef:1b:dc:9b:73:c4:d7:
+                    c0:d6:aa:f8:65:dc:b8:3d:06:76:12:30:1c:1b:77:
+                    ac:d0:53:bb:69:2c:19:f5:28:c8:f0:f3:ce:aa:8b:
+                    36:c7:65:e0:f3:ed:aa:89:ba:78:f0:57:b2:14:25:
+                    a3:b8:d6:14:f2
+                ASN1 OID: prime256v1
+                NIST CURVE: P-256
+        X509v3 extensions:
+            1.2.840.113635.100.6.36: critical
+                . ................................
+    Signature Algorithm: ecdsa-with-SHA256
+    Signature Value:
+        30:44:02:20:75:41:4f:63:af:80:f0:58:66:97:2f:fd:89:d7:
+...
+
