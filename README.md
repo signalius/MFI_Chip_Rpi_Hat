@@ -61,11 +61,11 @@ Certificate:
 
 ## Schematic
 
-![schematic](https://raw.githubusercontent.com/signalius/MFI_Chip_Rpi_Hat/master/electronic/Output/Schematic.png)
+![schematic](https://raw.githubusercontent.com/signalius/MFI_Chip_Rpi_Hat/master/electronic/RevA/Output/Schematic.png)
 
 # PCB view
 
-![pcb](https://raw.githubusercontent.com/signalius/MFI_Chip_Rpi_Hat/master/electronic/Output/pcb.png)
+![pcb](https://raw.githubusercontent.com/signalius/MFI_Chip_Rpi_Hat/master/electronic/RevA/Output/pcb.png)
 
 ## LICENSE
 GNU General Public License v3.0
