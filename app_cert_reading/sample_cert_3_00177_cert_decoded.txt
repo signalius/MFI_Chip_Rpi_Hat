@@ -1,0 +1,46 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            47:7b:98:41:ac:7f:73:1a:f7:ce:40:25:2c:f8:b5:f4
+        Signature Algorithm: ecdsa-with-SHA256
+        Issuer: C=US, O=Apple Inc., OU=Apple Certification Authority, CN=Apple Accessories Certification Authority - 00000002
+        Validity
+            Not Before: Dec  3 19:44:24 2022 GMT
+            Not After : Dec 31 23:59:59 2049 GMT
+        Subject: C=US, O=Apple Inc., OU=Apple Accessories, CN=IPA_477B9841AC7F731AF7CE40252CF8B5F4
+        Subject Public Key Info:
+            Public Key Algorithm: id-ecPublicKey
+                Public-Key: (256 bit)
+                pub:
+                    04:60:65:cf:d7:8d:28:a7:51:92:c1:f0:78:28:a0:
+                    e5:7b:6e:a2:f9:86:18:fc:ed:34:b6:7a:8e:b6:a4:
+                    09:28:a5:47:93:82:13:8c:c8:f8:cf:fc:28:44:e3:
+                    88:6c:f3:99:92:13:14:ef:3f:09:e4:3d:a1:c9:56:
+                    1d:96:a1:9c:ed
+                ASN1 OID: prime256v1
+                NIST CURVE: P-256
+        X509v3 extensions:
+            1.2.840.113635.100.6.36: critical
+                . ................................
+    Signature Algorithm: ecdsa-with-SHA256
+    Signature Value:
+        30:45:02:20:43:94:af:61:ae:38:63:eb:8b:aa:b6:d1:4a:e9:
+        35:0b:fe:6f:60:f1:58:a5:72:1c:b0:e0:45:4a:81:e0:8c:47:
+        02:21:00:ac:15:ae:79:13:a8:f7:de:10:c3:e5:32:04:d8:f5:
+        d7:c7:47:4c:9a:e6:d1:9c:1f:65:fc:22:ab:71:1e:de:47
+-----BEGIN CERTIFICATE-----
+MIICKzCCAdGgAwIBAgIQR3uYQax/cxr3zkAlLPi19DAKBggqhkjOPQQDAjCBiTEL
+MAkGA1UEBhMCVVMxEzARBgNVBAoTCkFwcGxlIEluYy4xJjAkBgNVBAsTHUFwcGxl
+IENlcnRpZmljYXRpb24gQXV0aG9yaXR5MT0wOwYDVQQDEzRBcHBsZSBBY2Nlc3Nv
+cmllcyBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eSAtIDAwMDAwMDAyMB4XDTIyMTIw
+MzE5NDQyNFoXDTQ5MTIzMTIzNTk1OVowbTELMAkGA1UEBhMCVVMxEzARBgNVBAoT
+CkFwcGxlIEluYy4xGjAYBgNVBAsTEUFwcGxlIEFjY2Vzc29yaWVzMS0wKwYDVQQD
+FCRJUEFfNDc3Qjk4NDFBQzdGNzMxQUY3Q0U0MDI1MkNGOEI1RjQwWTATBgcqhkjO
+PQIBBggqhkjOPQMBBwNCAARgZc/XjSinUZLB8HgooOV7bqL5hhj87TS2eo62pAko
+pUeTghOMyPjP/ChE44hs85mSExTvPwnkPaHJVh2WoZztozYwNDAyBgkqhkiG92Nk
+BiQBAf8EIgQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAwCgYIKoZI
+zj0EAwIDSAAwRQIgQ5SvYa44Y+uLqrbRSuk1C/5vYPFYpXIcsOBFSoHgjEcCIQCs
+Fa55E6j33hDD5TIE2PXXx0dMmubRnB9l/CKrcR7eRw==
+-----END CERTIFICATE-----
+

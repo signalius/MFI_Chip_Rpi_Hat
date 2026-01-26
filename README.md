@@ -1,6 +1,6 @@
 
 ## MFI Raspberry Pi Hat
-This Raspberry Pi HAT allows you to work with MFI chips with the symbols MFI343S00177 (CP3.0) and MFI337S3959 (CP2.0C). 
+This Raspberry Pi HAT allows you to work with MFI chips with the symbols MFI343S00177 and MFI337S3959. 
 Additionally, it has a USB C power in connector because USB C from Raspberry Pi may be needed as a USB OTG port.
 
 * Tested on: Raspberry 5 and Zero 2W
@@ -65,7 +65,8 @@ Certificate:
 
 # PCB view
 
-![pcb](https://raw.githubusercontent.com/signalius/MFI_Chip_Rpi_Hat/master/electronic/RevA/Output/pcb.png)
+![pcb](https://raw.githubusercontent.com/signalius/MFI_Chip_Rpi_Hat/master/electronic/RevA/Output/pcb_3959.jpg)
+![pcb](https://raw.githubusercontent.com/signalius/MFI_Chip_Rpi_Hat/master/electronic/RevA/Output/pcb_00177.jpg)
 
 ## LICENSE
 GNU General Public License v3.0
