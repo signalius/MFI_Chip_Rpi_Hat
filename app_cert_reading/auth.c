@@ -9,8 +9,6 @@
 #include <sys/ioctl.h>
 #include <unistd.h>
 #include <glib.h>
-#include <sys/socket.h>
-#include <arpa/inet.h>
 
 #define LOG(fmt, ...) \
     fprintf(stderr, "%s:%d:%s: " fmt "\n", __FILE__, __LINE__, __func__, ##__VA_ARGS__)
@@ -126,13 +124,9 @@ gboolean iAP2I2cWriteBlock( int fd, uint8_t reg, uint8_t * data, int16_t len )
 
 	return TRUE;
 }
+
 static int fd	=	0;
-/* 
- * ===  FUNCTION  ======================================================================
- *         Name:  iAP2AuthReadCertData
- *  Description:  
- * =====================================================================================
- */
+
 int16_t iAP2AuthReadCertData( uint8_t ** data )
 {
 	static uint8_t * certData	=	NULL;
@@ -168,14 +162,8 @@ int16_t iAP2AuthReadCertData( uint8_t ** data )
 	* data	=	certData;
 
 	return certLen;
-}		/* -----  end of function iAP2AuthReadCertData  ----- */
+}	
 
-/* 
- * ===  FUNCTION  ======================================================================
- *         Name:  iAP2AuthWriteChallengeData
- *  Description:  
- * =====================================================================================
- */
 gboolean iAP2AuthWriteChallengeData( uint8_t * data, uint16_t len )
 {
 	uint8_t _buf[2]	=	{0};
@@ -204,14 +192,8 @@ gboolean iAP2AuthWriteChallengeData( uint8_t * data, uint16_t len )
 		_result	=	TRUE;
 
 	return _result;
-}		/* -----  end of function iAP2AuthWriteChallengeData  ----- */
+}		
 
-/* 
- * ===  FUNCTION  ======================================================================
- *         Name:  iAP2AuthReadChallengeResponse
- *  Description:  
- * =====================================================================================
- */
 int16_t iAP2AuthReadChallengeResponse( uint8_t ** data )
 {
 	uint8_t _buf[2];
@@ -232,99 +214,46 @@ int16_t iAP2AuthReadChallengeResponse( uint8_t ** data )
 	fd	=	0;
 
 	return _resLen;
-}		/* -----  end of function iAP2AuthReadChallengeResponse  ----- */
-/* 
- * ===  FUNCTION  ======================================================================
- *         Name:  main
- *  Description:  
- * =====================================================================================
- */
+}
+
 int main ( int argc, char *argv[] )
 {
-	int _fd, _cfd;
-	struct sockaddr_in _addr, _caddr;
-	socklen_t _clen;
 	unsigned char _buf[1024];
 
 	LOG("Start");
-	if((_fd = socket(AF_INET, SOCK_STREAM, 0)) < 0)
-	{
-		perror("Socket Create");
-
-		return 1;
-	}
-	LOG("Socket created with success");
 		
-	{	
-		uint8_t * c;
-		int len =	iAP2AuthReadCertData( &c );
-		LOG("Cert len=%d", len);
-		if(len>0) {
-			for(int i=0; i<len; i+=16) {
-				for(int j=0; j<16; j++) {
-					printf("%02X ", c[i+j]);			
-					if(j==7) printf(" ");
-				}
-				printf("\n");
+	uint8_t * c;
+	int len =	iAP2AuthReadCertData( &c );
+	LOG("Cert len=%d\n", len);
+	if(len>0) {
+		for(int i=0; i<len; i+=16) {
+			for(int j=0; j<16; j++) {
+				printf("%02X ", c[i+j]);			
+				if(j==7) printf(" ");
 			}
+			printf("\n");
 		}
 	}
-
-	memset(&_addr, 0, sizeof(struct sockaddr_in));
-
-	_addr.sin_family	=	AF_INET;
-	_addr.sin_addr.s_addr	=	htonl(INADDR_ANY);
-	_addr.sin_port		=	htons(5196);
-
-	bind(_fd, (struct sockaddr *)&_addr, sizeof(struct sockaddr_in));
-
-	listen(_fd, 1);
-
-	_clen	=	sizeof(struct sockaddr_in);
-
-	while(1)
-	{
-		uint16_t _certLen, _resLen;
-		uint8_t * _cert, * _res;
-
-		_cfd	=	accept(_fd, (struct sockaddr *)&_caddr, &_clen);
-
-		printf("Wait for data\n");			
+	printf("\n");
+	
+	uint16_t _resLen;
+	uint8_t  *_res;
 		
-		recv(_cfd, _buf, 50, 0);
+   	uint8_t _chal[64] = {1, 2, 2, 1, 1, 2, 1, 3, 1, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1};
 		
-		printf("Received something...\n");			
-
-		switch(_buf[0])
-		{
-		case 0:
-			_certLen	=	iAP2AuthReadCertData( &_cert );
-			_buf[0]	=	_certLen >> 8;
-			_buf[1]	=	_certLen & 0xFF;
-			LOG("_certLen=%d", _certLen);
-
-			memcpy(_buf + 2, _cert, _certLen);
-			send(_cfd, _buf, _certLen + 2, 0);
-			break;
-		case 1:
-			iAP2AuthWriteChallengeData( _buf + 3, _buf[1] << 8 | _buf[2] );
-
-			_resLen	=	iAP2AuthReadChallengeResponse( &_res );
-			LOG("_resLen=%d", _resLen);
-
-			_buf[0]	=	_resLen >> 8;
-			_buf[1]	=	_resLen & 0xFF;
-
-			memcpy(_buf + 2, _res, _resLen);
-			send(_cfd, _buf, _resLen + 2, 0);
-			break;
-		default:
-			break;
+	iAP2AuthWriteChallengeData( _chal, 20 );
+	_resLen	= iAP2AuthReadChallengeResponse( &_res );
+	LOG("Resp len=%d\n", _resLen);
+	if(_resLen>0) {
+		for(int i=0; i<_resLen; i+=16) {
+			for(int j=0; j<16; j++) {
+				printf("%02X ", _res[i+j]);			
+				if(j==7) printf(" ");
+			}
+			printf("\n");
 		}
-
-		close(_cfd);
 	}
 
 	return 0;
-}				/* ----------  end of function main  ---------- */
+}	
 
