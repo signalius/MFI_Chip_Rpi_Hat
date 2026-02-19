@@ -66,7 +66,7 @@ Certificate:
 # PCB view
 
 ![pcb](https://raw.githubusercontent.com/signalius/MFI_Chip_Rpi_Hat/master/electronic/RevA/Output/pcb_3959.jpg)
-![pcb](https://raw.githubusercontent.com/signalius/MFI_Chip_Rpi_Hat/master/electronic/RevA/Output/pcb_00177.jpg)
+![pcb](https://raw.githubusercontent.com/signalius/MFI_Chip_Rpi_Hat/master/electronic/RevA/Output/pcb_both.jpg)
 
 ## LICENSE
 GNU General Public License v3.0

@@ -3044,9 +3044,29 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "Rpi power in from USB-C\n"
+	(text "I2C Addr\n0x10"
 		(exclude_from_sim no)
-		(at 24.13 25.146 90)
+		(at 59.69 94.996 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "27ca6a7d-cf2a-4cca-861a-7d0f36a24883")
+	)
+	(text "I2C Addr\n0x11"
+		(exclude_from_sim no)
+		(at 57.15 121.412 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "8c153eb0-1c46-40cb-aab3-a0df23754e7e")
+	)
+	(text "External power for Rpi\n"
+		(exclude_from_sim no)
+		(at 26.162 25.654 90)
 		(effects
 			(font
 				(size 2 2)
